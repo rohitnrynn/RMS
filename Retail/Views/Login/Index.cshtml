@@ -1,0 +1,42 @@
+@model Retail.Controllers.ModelBag;
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="col  card"style="width:500px;position:relative;top:10px;left:350px">
+    <div class="card-body">
+        <h2 style="text-align:center">
+            <img src="~/images/login.png" class="rounded-circle" alt="Logo" style="width:150px;border-width: 0px;">
+            Login
+        </h2>
+        <hr />
+
+        <div class="container-fluid" style="width:400px">
+            <form class="form-signin" method="post" asp-controller="Login" asp-action="SignIn">
+                <div asp-validation-summary="ModelOnly"></div>
+
+                @*<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>*@
+                <div class="form-group">
+                    <p>User Name:</p>
+                    <input asp-for="@Model.Login.Username" id="Username" class="form-control" placeholder="Enter User Name" required="" autofocus="">
+                    <span asp-validation-for="@Model.Login.Username" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <p>Password:</p>
+                    <input asp-for="@Model.Login.Password" id="Password" class="form-control" placeholder="Enter Password" required="">
+                    <span asp-validation-for="@Model.Login.Password" class="text-danger"></span>
+                </div>
+                <br>
+                <button class="btn  btn-dark btn-block" type="submit">Sign in</button>
+
+            </form>
+            <br />
+            @if (ViewData["LoginStatus"] != null)
+            {
+                <div class="alert alert-danger mt-3">
+                    <h5>Login Failed!</h5>
+                    Invalid Login Details!!
+                </div>
+            }
+        </div>
+        </div></div>

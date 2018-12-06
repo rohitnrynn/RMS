@@ -1,0 +1,24 @@
+﻿@model Retail.Models.DBModels.Outlet
+@{
+    ViewData["Title"] = "AddOutlet";
+}
+<h3 class="pt-2">Enter new outlet details!</h3>
+<hr />
+<div style="width:500px">
+    <form class="pt-1" method="post" asp-controller="CentralInventory" asp-action="AddOutletFunction">
+        <div class="form-group">
+            <label asp-for="Location"><strong>Location</strong></label>
+            <input asp-for="Location" type="text" class="form-control" id="name" placeholder="Name" required>
+        </div>
+        <div class="form-group">
+            <label asp-for="PhoneNumber"><strong>Phone Number</strong></label>
+            <input asp-for="PhoneNumber" type="text" class="form-control" id="phone" placeholder="Phone Number" required>
+        </div>
+        <div class="form-group">
+            <label asp-for="Address"><strong>Address</strong></label>
+            <textarea asp-for="Address" type="text" style="resize:none" class="form-control" id="address" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark">Add Outlet</button>
+    </form>
+</div>
+

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Retail.Models.DBModels.Outlet>
+@{
+    ViewData["Title"] = "ViewOutlet";
+}
+
+
+<h2>View Outlet</h2>
+
+<div class="table-responsive">
+    <table class="table table-hover table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Outlet Id</th>
+                <th>Outlet Location</th>
+                <th>Outlet Address</th>
+                <th>Outlet Phone</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OutletId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Location)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+

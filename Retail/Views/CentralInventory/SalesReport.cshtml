@@ -1,0 +1,107 @@
+﻿@{
+    ViewData["Title"] = "SalesReport";
+}
+
+<br />
+<h3>Sales Report</h3>
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="form-inline w-75 col">
+                <div>
+                    <div class="form-inline" style="font-family:'Century Gothic'">
+                        <label class="mr-sm-4">Period</label>
+                        <div class="input-group input-group-sm  mr-sm-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">From:</span>
+                            </div>
+                            <input type="date" id="dteFrom" class="form-control form-control-sm">
+                        </div>
+                        <div class="input-group input-group-sm mr-sm-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">To:</span>
+                            </div>
+                            <input type="date" id="dteTo" class="form-control form-control-sm">
+                        </div>
+                        <div><button class="btn btn-info btn-sm" id="btnFilter">VIEW</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+
+@section Scripts{
+    <script>
+
+        document.getElementById('dteTo').value = '2018-01-01';
+        document.getElementById('dteFrom').value = '2018-01-01';
+
+        $('#btnFilter').click(function (e) {
+
+            var data = {
+                fromDate: $('#dteFrom').val(),
+                toDate: $('#dteTo').val(),
+                type: 0
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "/CentralInventory/ReportData",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify(data),
+                success: function (res) {
+                    var orgContent = document.getElementById('app-body').innerHTML;
+
+                    console.log(res)
+                    printSalesReport(data, res[0], "Category")
+                    printSalesReport(data, res[1], "Product")
+                    printSalesReport(data, res[2], "Store")
+
+                }
+            })
+        });
+
+        function printSalesReport(data, res, type) {
+            var stringEle = '<div class="text-center">' +
+                '<h4>' + type + ' wise</h4> ' +
+                '<span><small>' + 'Sales report from ' + data.fromDate + ' to ' + data.toDate + '</small> </span>' +
+                '<table class="table table-bordered w-50 mx-auto">' +
+                '<thead>' +
+                '<tr>' +
+                '<th>' +
+                type +
+                '</th>' +
+                '<th>' +
+                'Total Revenue' +
+                '</th>' +
+                '</tr>' +
+                '</thead>' +
+                '<tbody id="body-report' + type + '">' +
+                '</tbody>'
+            '</table > ';
+            '</div>';
+            $("#app-body").append(stringEle)
+
+            for (var i in res) {
+                var strTrEle = "<tr>" +
+                    "<td>" + res[i].x + "</td>" +
+                    "<td>" + res[i].y + "</td>"
+                "</tr>";
+                $("#body-report" + type).append(strTrEle);
+            }
+
+        }
+
+        function month(mon) {
+            if (mon >= 10) {
+                return mon;
+            } else {
+                return '0' + mon;
+            }
+        }
+    </script>
+}

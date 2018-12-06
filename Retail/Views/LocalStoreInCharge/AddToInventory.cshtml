@@ -1,0 +1,43 @@
+﻿@model Retail.Models.DBModels.LocalInventory
+
+@{
+    ViewData["Title"] = "Add Product to Inventory";
+}
+
+<h2>Create</h2>
+
+<h4>LocalInventory</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddInventory">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" style="display: none;">
+                <label asp-for="ProductId" class="control-label"></label>
+                <select asp-for="ProductId" class="form-control" asp-items="ViewBag.ProductId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReorderLevel" class="control-label"></label>
+                <input asp-for="ReorderLevel" class="form-control" />
+                <span asp-validation-for="ReorderLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SafetyLevel" class="control-label"></label>
+                <input asp-for="SafetyLevel" class="form-control" />
+                <span asp-validation-for="SafetyLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display: none;">
+                <label asp-for="OutletId" class="control-label"></label>
+                <select asp-for="OutletId" class="form-control" asp-items="ViewBag.OutletId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-dark btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

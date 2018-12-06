@@ -1,0 +1,135 @@
+﻿@model IEnumerable<Retail.Models.DBModels.Staff>
+    <h2>ViewStaff</h2>
+
+    <div class="table-responsive table-bordered table-hover">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Staff Id</th>
+                    <th>Staff Name</th>
+                    <th>Staff Address</th>
+                    <th>Staff Dob</th>
+                    <th>Staff Phone</th>
+                    <th>Staff Role</th>
+                    <th>Staff Username</th>
+                    <th>Staff Password</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach(var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Age)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PhoneNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Role)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Username)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Password)
+                        </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!--Confirmation Modal-->
+@*@<div class="modal fade" id="confirmation">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container bg-white">
+                        <p><strong>Are you sure you want to delete?</strong></p>
+                        <div class="btn-group">
+                            <button type="button" data-toggle="modal" data-target="#newProModal" class="btn btn-success">Yes</button>
+                            <button type="button" data-dismiss="modal" class="btn btn-danger">No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Confirmation Modal Ends-->
+    <!--Update Details-->
+    <div class="modal fade" id="EditDetails">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <div>
+                        <h2>Update Staff</h2>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="container bg-white">
+                        <form class="pt-1" method="post" asp-controller="CentralInventory" asp-action="AddStaffFunction">
+                            <div class="form-group">
+                                <label asp-for="Name"><strong>Name</strong></label>
+                                <input asp-for="Name" type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="updatestaff.PhoneNumber"><strong>Phone Number</strong></label>
+                                <input asp-for="updatestaff.PhoneNumber" type="text" class="form-control" id="phone" placeholder="Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="updatestaff.Address"><strong>Address</strong></label>
+                                <textarea asp-for="updatestaff.Address" type="text" row="4" class="form-control" id="address" placeholder="Address" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="updatestaff.Age"><strong>Dob</strong></label>
+                                <input asp-for="updatestaff.Age" type="date" class="form-control" id="dob" required>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="updatestaff.Username"><strong>User Name</strong></label>
+                                <input asp-for="updatestaff.Username" type="text" class="form-control" id="username" placeholder="User Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="updatestaff.Password"><strong>Password</strong></label>
+                                <input asp-for="updatestaff.Password" type="text" class="form-control" id="password" placeholder="Password" required>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="updatestaff.Role"><strong>Role</strong></label>
+                                <select asp-for="updatestaff.Role" class="form-control" id="role" required>
+                                    <option value="admin">Admin</option>
+                                    <option value="localstoreincharge">Local Store In-Charge</option>
+                                    <option value="localstoremanager">Local Store Manager</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select></select>
+                                <label asp-for="updatestaff.OutletId"><strong>Outlet Id</strong></label>
+                                <input asp-for="updatestaff.OutletId" type="text" class="form-control" id="Outlet Id" placeholder="Outlet Id" required>
+                            </div>
+                            <button type="submit" class="btn btn-success">Add Staff</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>*@
+<!--Update Details Ends-->

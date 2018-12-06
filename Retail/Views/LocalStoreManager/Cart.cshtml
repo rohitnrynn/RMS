@@ -1,0 +1,46 @@
+@model Retail.Models.CustomModels.CustomOrder
+@{
+  ViewData["Title"] = "Orders";
+}
+
+<h2>Orders</h2>
+<div class="thumbnail">
+  <table class="table" style="overflow-x:auto;">
+    <thead class="thead-dark">
+      <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach (var item in ViewBag.prods)
+      {
+        <tr>
+          @foreach (var item2 in ViewBag.Product)
+          {
+            @if (item2.ProductId == item.ProdId)
+            {
+              <td>@item2.ProductName</td>
+              <td>@item2.Rate</td>
+
+            }
+          }
+          <td>@item.Qty</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+<form asp-action="SubmitOrder" method="get">
+  @if (Enumerable.Count(ViewBag.prods) > 0)
+  {
+      <input type="submit" class="btn btn-dark" value="Place Order" />
+  }
+  else
+  {
+    <p class="text-center"><strong>Please add items to cart</strong></p>
+  }
+
+  </form>

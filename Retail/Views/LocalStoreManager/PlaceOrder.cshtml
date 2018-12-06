@@ -1,0 +1,134 @@
+@model Retail.Models.CustomModels.CustomOrder
+<div class="table-responsive mt-3">
+  <table class="table  table-hover table-bordered " style="text-align:center;">
+      <thead class="thead-dark">
+          <tr>
+              <th>Product ID</th>
+              <th>Name</th>
+              <th>Reorder Level</th>
+              <th>Saftey Level</th>
+              <th>Stock</th>
+              <th>Price</th>
+              <th>Description/Operation</th>
+          </tr>
+      </thead>
+      <tbody>
+
+      @foreach (var j in ViewBag.LocalProducts)
+      {
+        @foreach (var b in ViewBag.Products)
+        {
+            if (j.ProductId == b.ProductId)
+            {
+              <tr>
+                <td>
+                  @j.ProductId
+                </td>
+                <td>
+                  @b.ProductName
+                </td>
+                <td>
+                  @j.ReorderLevel
+                </td>
+                <td>
+                  @j.SafetyLevel
+                </td> 
+                <td style='color:@(j.CurrentStock<j.SafetyLevel ? j.CurrentStock<j.ReorderLevel?"red":"blue":"green");'>
+                  @j.CurrentStock
+                </td>
+                <td>
+                  @b.Rate
+                </td>
+                <td class="text-center">
+
+                  <form class="form-inline">
+                    @{
+                      int Id = j.ProductId;
+                    }
+                    <input type="hidden" asp-for="@Id" />
+                    <button type="button" style="background-color:black; border-color:black;" class="btn btn-primary rounded-circle" data-toggle="dropdown">
+                      <i class="fa fa-expand">View</i>
+                    </button>&emsp;
+                    <div class="dropdown-menu">
+                      <table class="">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th>Specification</th>
+                            <th>Value</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          @foreach (var sp in ViewBag.Spec)
+                          {
+                            if (j.ProductId == sp.ProdId)
+                            {
+                              <tr>
+                                <td><p>@sp.SpecName</p></td>
+                                <td><p>@sp.SpecValue</p></td>
+                              </tr>
+                            }
+
+                          }
+                        </tbody>
+                      </table>
+                    </div>
+                    <button type="button" style="background-color:black; border-color:black;" class="btn btn-dark" data-toggle="collapse" data-target="#addProduct" onclick="getId(@j.ProductId)">Add Quantity</button>
+
+                  </form>
+
+                </td>
+
+              </tr>
+            }
+
+          }
+        }
+      
+
+    </tbody>
+  </table>
+</div>
+<div id="addProduct" class="collapse">
+  <form asp-controller="LocalStoreManager" asp-action="AddtoOrder" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-dang er"></div>
+    <div class="form-group" style="display:none;">
+      <label asp-for="ProdId" class="control-label">Product Id</label>
+      <input asp-for="ProdId" class="form-control" readonly id="id" />
+      <span asp-validation-for="ProdId" class="text-danger field-validation-valid"></span>
+    </div>
+    <div class="form-group" >
+      <input asp-for="Qty" class="form-control" placeholder="Quantity" required />
+      <span asp-validation-for="Qty" class="text-danger field-validation-valid"></span>
+    </div>
+    <div class="form-group">
+      <input type="submit" value="Add to Cart" class="btn btn-dark btn-info" />
+    </div>
+  </form>
+</div>
+
+@section Scripts
+  {
+  <script>
+
+    function OnProductSelect(cb, id) {
+      if (cb.clicked) {
+
+        $('#' + id).show();
+      }
+      else {
+        $('#' + id).hide();
+      }
+    }
+
+    $(document).ready(function () {
+
+    });
+  </script>
+}
+
+<script>
+  function getId(str) {
+    document.getElementById("id").value = str;
+  }
+</script>
+

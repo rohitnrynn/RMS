@@ -1,0 +1,83 @@
+﻿@model dynamic
+<div class="table-responsive mt-3">
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th>Product ID</th>
+            <th>Name</th>
+            <th>Reorder Level</th>
+            <th>Saftey Level</th>
+            <th>Stock</th>
+            <th>Price(₹)</th>
+            <th>Description</th>
+        </tr></thead>
+        <tbody>
+            @foreach (var j in Model.local)
+            {
+                @foreach (var b in Model.prod)
+                {
+                    if (j.ProductId == b.ProductId)
+                    {
+                        <tr>
+                            <td>
+                                @j.ProductId
+                            </td>
+                            <td>
+                                @b.ProductName
+                            </td>
+                            <td>
+                                @j.ReorderLevel
+                            </td>
+                            <td>
+                                @j.SafetyLevel
+                            </td>
+                            <td>
+                                @j.CurrentStock
+                            </td>
+                            <td>
+                                @b.Rate
+                            </td>
+                            <td class="text-center">
+
+                                <form class="">
+                                    @{
+                                        int Id = j.ProductId;
+                                    }
+                                    <input type="hidden" asp-for="@Id" />
+                                    <button type="button" style="background-color:black; border-color:black;" class="btn btn-primary rounded-circle" data-toggle="dropdown">
+                                        <i class="fa fa-expand">View</i>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <table class="">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th>Specification</th>
+                                                    <th>Value</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var sp in Model.spec)
+                                                {
+                                                    if (j.ProductId == sp.ProdId)
+                                                    {
+                                                        <tr>
+                                                            <td><p>@sp.SpecName</p></td>
+                                                            <td><p>@sp.SpecValue</p></td>
+                                                        </tr>
+                                                    }
+
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </form>
+
+                            </td>
+                        </tr>
+                    }
+                }
+            }
+
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,137 @@
+F:\Asp.net Core\Retail Management System\Retail\Retail\bin\Debug\netcoreapp2.1\Retail.deps.json
+F:\Asp.net Core\Retail Management System\Retail\Retail\bin\Debug\netcoreapp2.1\Retail.runtimeconfig.json
+F:\Asp.net Core\Retail Management System\Retail\Retail\bin\Debug\netcoreapp2.1\Retail.runtimeconfig.dev.json
+F:\Asp.net Core\Retail Management System\Retail\Retail\bin\Debug\netcoreapp2.1\Retail.dll
+F:\Asp.net Core\Retail Management System\Retail\Retail\bin\Debug\netcoreapp2.1\Retail.pdb
+F:\Asp.net Core\Retail Management System\Retail\Retail\bin\Debug\netcoreapp2.1\Retail.Views.dll
+F:\Asp.net Core\Retail Management System\Retail\Retail\bin\Debug\netcoreapp2.1\Retail.Views.pdb
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.csprojAssemblyReference.cache
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.csproj.CoreCompileInputs.cache
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.RazorAssemblyInfo.cache
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.RazorAssemblyInfo.cs
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.AssemblyInfoInputs.cache
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.AssemblyInfo.cs
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.TagHelpers.input.cache
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.TagHelpers.output.cache
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.RazorCoreGenerate.cache
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.RazorTargetAssemblyInfo.cache
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.RazorTargetAssemblyInfo.cs
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.Views.pdb
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.dll
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.pdb
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.csproj.CopyComplete
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Home\Login.g.cshtml.cs
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Login\Index.g.cshtml.cs
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\LocalStoreManager\Index.g.cshtml.cs
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\LocalStoreManager\AddNewProduct.g.cshtml.cs
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\CentralInventory\Index.g.cshtml.cs
+F:\Asp.net Core\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\CentralInventory\AddStaff.g.cshtml.cs
+D:\Project_Final\Retail Management System\Retail\Retail\bin\Debug\netcoreapp2.1\Retail.deps.json
+D:\Project_Final\Retail Management System\Retail\Retail\bin\Debug\netcoreapp2.1\Retail.runtimeconfig.json
+D:\Project_Final\Retail Management System\Retail\Retail\bin\Debug\netcoreapp2.1\Retail.runtimeconfig.dev.json
+D:\Project_Final\Retail Management System\Retail\Retail\bin\Debug\netcoreapp2.1\Retail.dll
+D:\Project_Final\Retail Management System\Retail\Retail\bin\Debug\netcoreapp2.1\Retail.pdb
+D:\Project_Final\Retail Management System\Retail\Retail\bin\Debug\netcoreapp2.1\Retail.Views.dll
+D:\Project_Final\Retail Management System\Retail\Retail\bin\Debug\netcoreapp2.1\Retail.Views.pdb
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.csprojAssemblyReference.cache
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.csproj.CoreCompileInputs.cache
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.RazorAssemblyInfo.cache
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.RazorAssemblyInfo.cs
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.AssemblyInfoInputs.cache
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.AssemblyInfo.cs
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.TagHelpers.input.cache
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.TagHelpers.output.cache
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.RazorCoreGenerate.cache
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\CentralInventory\AddStaff.g.cshtml.cs
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\CentralInventory\Index.g.cshtml.cs
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Home\Login.g.cshtml.cs
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\LocalStoreManager\AddNewProduct.g.cshtml.cs
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\LocalStoreManager\Index.g.cshtml.cs
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Login\Index.g.cshtml.cs
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.RazorTargetAssemblyInfo.cache
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.RazorTargetAssemblyInfo.cs
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.Views.pdb
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.dll
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.pdb
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.csproj.CopyComplete
+D:\Project_Final\Retail Management System\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\CentralInventory\AddOutlet.g.cshtml.cs
+D:\mvc\Retail\Retail\bin\Debug\netcoreapp2.1\Retail.deps.json
+D:\mvc\Retail\Retail\bin\Debug\netcoreapp2.1\Retail.runtimeconfig.json
+D:\mvc\Retail\Retail\bin\Debug\netcoreapp2.1\Retail.runtimeconfig.dev.json
+D:\mvc\Retail\Retail\bin\Debug\netcoreapp2.1\Retail.dll
+D:\mvc\Retail\Retail\bin\Debug\netcoreapp2.1\Retail.pdb
+D:\mvc\Retail\Retail\bin\Debug\netcoreapp2.1\Retail.Views.dll
+D:\mvc\Retail\Retail\bin\Debug\netcoreapp2.1\Retail.Views.pdb
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.csproj.CoreCompileInputs.cache
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.RazorAssemblyInfo.cache
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.RazorAssemblyInfo.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.AssemblyInfoInputs.cache
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.AssemblyInfo.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.TagHelpers.input.cache
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.TagHelpers.output.cache
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.RazorCoreGenerate.cache
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\CentralInventory\AddOutlet.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\CentralInventory\AddStaff.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\CentralInventory\Index.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Home\Login.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\LocalStoreManager\AddNewProduct.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\LocalStoreManager\Index.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Login\Index.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.RazorTargetAssemblyInfo.cache
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.RazorTargetAssemblyInfo.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.Views.pdb
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.dll
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.pdb
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.csproj.CopyComplete
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\CentralInventory\ViewStaff.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\CentralInventory\ViewOutlet.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\CentralInventory\ViewProduct.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\CentralInventory\AddProduct.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\CentralInventory\ViewOrders.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\CentralInventory\EditProduct.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\CentralInventory\ManageOrder.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Retail.csprojAssemblyReference.cache
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\CentralInventory\UpdateProduct.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\LocalStoreInCharge\InventoryCatalogue.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\LocalStoreInCharge\Index.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\LocalStoreManager\Cart.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\LocalStoreManager\MakeOrder.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\LocalStoreManager\ManageOrder.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\LocalStoreManager\PlaceOrder.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\LocalStoreInCharge\AddToInventory.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\LocalStoreInCharge\ManageProducts.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\POS\CustomerDetails.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\POS\Index.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\POS\Invoice.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\CentralInventory\SalesReport.g.cshtml.cs
+D:\mvc\Retail\Retail\obj\Debug\netcoreapp2.1\Razor\Views\LocalStoreInCharge\Reports.g.cshtml.cs

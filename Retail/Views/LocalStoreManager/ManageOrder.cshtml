@@ -1,0 +1,166 @@
+<div class="accordion mt-5" id="accordionExample">
+  <div class="card">
+    <div class="card-header" style="background-color:rgb(52, 58, 64)" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" type="button" style="align-self:center; font-weight:600; color:white;" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Pending Orders
+        </button>
+      </h5>
+    </div>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      @foreach (var odr in ViewBag.Pending)
+      {
+        @if (Enumerable.Count(ViewBag.Pending) > 0)
+        {
+          <div class="card-body">
+            <p class="btn btn-dark"><strong>Order Id: @odr.OrderId</strong></p>
+            <p><strong>Placed On: @odr.OrderDate</strong></p>
+            @foreach (var pending in ViewBag.Pending)
+            {
+              if (odr.OrderId == pending.OrderId)
+              {
+                @foreach (var prod in ViewBag.Prod)
+                {
+                  @foreach (var det in ViewBag.OrderDetails)
+                  {
+                    if (prod.ProductId == det.ProductId && pending.OrderId == det.OrderId)
+                    {
+                      <hr />
+                      <p>Product Name: @prod.ProductName</p>
+                      @foreach (var det1 in ViewBag.OrderDetails)
+                      {
+                        if (det1.OrderId == odr.OrderId && prod.ProductId == det1.ProductId)
+                        {
+                          <p>Quantity: @det.Quantity</p>
+                        }
+                      }
+                    }
+                  }
+
+                }
+
+
+              }
+
+            }
+
+          </div>
+        }
+
+      }
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" style="background-color:rgb(52, 58, 64)" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" style="font-weight:600; color:white;" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Dispatched Orders
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      @foreach (var odr in ViewBag.Dispatched)
+      {
+        @if (Enumerable.Count(ViewBag.Dispatched) > 0)
+        {
+      <div class="card-body">
+        <p class="btn btn-dark"><strong>Order Id: @odr.OrderId</strong></p>
+        <p><strong>Placed On: @odr.OrderDate</strong></p>
+        <form asp-controller="LocalStoreManager" asp-action="AcceptOrder" asp-route-id="@odr.OrderId" method="post">
+          <input type="submit" value="Accept Order" class="btn btn-success" />
+          <!-- <a class="btn btn-success" asp-controller="CentralInventoryController" asp-action="VerifyOrder" asp-route-id="@odr.OrderId">Verify Order</a>-->
+        </form>
+        @foreach (var pending in ViewBag.Dispatched)
+        {
+          if (odr.OrderId == pending.OrderId)
+          {
+            @foreach (var prod in ViewBag.Prod)
+            {
+              @foreach (var detail in ViewBag.OrderDetails)
+              {
+                if (prod.ProductId == detail.ProductId && pending.OrderId == detail.OrderId)
+                {
+                  <hr />
+                  <p>Product Name: @prod.ProductName</p>
+                  @foreach (var det in ViewBag.OrderDetails)
+                  {
+                    if (det.OrderId == odr.OrderId && prod.ProductId == det.ProductId)
+                    {
+                      <p>Quantity: @det.Quantity</p>
+                    }
+                  }
+                }
+
+
+
+              }
+
+            }
+
+
+          }
+
+        }
+
+      </div>
+        }
+      }
+
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" style="background-color:rgb(52, 58, 64)" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" style="font-weight:600; color:white;" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Completed Orders
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      @foreach (var odr in ViewBag.Completed)
+      {
+        @if (Enumerable.Count(ViewBag.Completed) > 0)
+        {
+          <div class="card-body">
+            <p class="btn btn-dark"><strong>Order Id: @odr.OrderId</strong></p>
+            <p><strong>Placed On: @odr.OrderDate</strong></p>
+            <p><strong>Delivered On: @odr.DeliveryDate</strong></p>
+            @foreach (var pending in ViewBag.Completed)
+            {
+              if (odr.OrderId == pending.OrderId)
+              {
+                @foreach (var prod in ViewBag.Prod)
+                {
+                  @foreach (var detail in ViewBag.OrderDetails)
+                  {
+                    if (prod.ProductId == detail.ProductId && pending.OrderId == detail.OrderId)
+                    {
+                      <hr />
+                      <p>Product Name: @prod.ProductName</p>
+                      @foreach (var det in ViewBag.OrderDetails)
+                      {
+                        if (det.OrderId == odr.OrderId && prod.ProductId == det.ProductId)
+                        {
+                          <p>Quantity: @det.Quantity</p>
+                        }
+                      }
+                    }
+
+
+
+                  }
+
+                }
+
+
+              }
+
+            }
+
+          </div>
+        }
+      }
+
+    </div>
+  </div>
+</div>

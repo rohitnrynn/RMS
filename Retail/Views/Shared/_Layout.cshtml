@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/loho.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <title>@ViewData["Title"] - Retail</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    @*<link rel="stylesheet"href="~/css/site.css"type="text/css" />*@
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <img src="~/images/loho.png" class="rounded-circle" alt="Logo" style="width:50px;border-width: 0px;">
+
+        <a class="navbar-brand" style="color:white;">Retail&emsp;</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="nav navbar-nav mr-auto ">
+                @if (User.FindFirst(claim => claim.Type == System.Security.Claims.ClaimTypes.Role)?.Value == "admin")
+                {
+                    @*<div class="dropdown">*@
+
+                    @*<li>
+                <button class="dropbtn">
+
+                    <i class="fa fa-caret-down">  Add</i>
+                </button>
+            </li>
+
+
+            <div class="dropdown-content">*@
+                    <li class="nav-item dropdown mr-auto">
+                        <a class="nav-link dropdown-toggle " style="width:100px;height:20px;" href="#" id="navbardrop" data-toggle="dropdown">
+                            Add
+                        </a>
+                        <div class="dropdown-menu mr-auto">
+                            <a class="dropdown-item" asp-area="" asp-controller="CentralInventory" asp-action="AddStaff">Add Staff</a>
+                            <a class="dropdown-item" asp-area="" asp-controller="CentralInventory" asp-action="AddOutlet">Add Outlet</a>
+                            <a class="dropdown-item" asp-area="" asp-controller="CentralInventory" asp-action="AddProduct">Add Product</a>
+
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown mr-auto">
+                        <a class="nav-link dropdown-toggle " style="width:100px;height:20px;" href="#" id="navbardrop" data-toggle="dropdown">
+                            View
+                        </a>
+
+                        <div class="dropdown-menu mr-auto">
+
+                            <a asp-area="" asp-controller="CentralInventory" asp-action="ViewStaff" class="dropdown-item">View Staffs</a>
+                            <a asp-area="" asp-controller="CentralInventory" asp-action="ViewOutlet" class="dropdown-item">View Outlets</a>
+                            <a asp-area="" asp-controller="CentralInventory" asp-action="ViewProduct" class="dropdown-item">View Products</a>
+                            <a asp-area="" asp-controller="CentralInventory" asp-action="ManageOrder" class="dropdown-item">View Orders</a>
+
+                        </div>
+
+                    </li>
+                    <li class="nav-item">
+                        <a asp-area="" asp-controller="CentralInventory" asp-action="SalesReport" class="nav-link">Report</a>
+
+                    </li>
+                }
+                @if (User.FindFirst(claim => claim.Type == System.Security.Claims.ClaimTypes.Role)?.Value == "localstoremanager")
+                {
+
+                    <li><a asp-area="" asp-controller="LocalStoreManager" asp-action="PlaceOrder" class="mr-sm-2" style="color:white;">Place Order</a>&emsp;</li>
+                    <li><a asp-area="" asp-controller="LocalStoreManager" asp-action="ManageOrder" class="mr-sm-2" style="color:white;">Manage Orders</a>&emsp;</li>
+
+                    @*<li><a asp-area="" asp-controller="" asp-action="" style="color:white;" class="mr-sm-2">Generate Report</a>&emsp;</li>*@
+
+                    <li><a asp-area="" asp-controller="LocalStoreManager" asp-action="Cart" class="mr-sm-2" style="color:white;"><i class="fa fa-shopping-cart fa-2x" style="color:white;"></i>&nbsp;Cart&nbsp;</a></li>
+
+
+                }
+                @if (User.FindFirst(claim => claim.Type == System.Security.Claims.ClaimTypes.Role)?.Value == "pos")
+                {
+                    @*<li><a asp-area="" asp-controller="POS" asp-action="AddCustomer" class="mr-sm-2" style="color:white;">Add Customer</a></li>*@
+                }
+                @if (User.FindFirst(claim => claim.Type == System.Security.Claims.ClaimTypes.Role)?.Value == "localstoreincharge")
+                {
+
+                    @*<li><a asp-area="" asp-controller="LocalStoreManager" asp-action="AddNewProduct" class="mr-sm-2" style="color:white;">Add Products</a></li>
+            <li><a asp-area="" asp-controller="" asp-action="" style="color:white;" class="mr-sm-2">Generate Report</a></li>*@
+                    <li><a asp-area="" asp-controller="LocalStoreInCharge" asp-action="ManageProduct" class="mr-sm-2" style="color:white;">Products Available</a>&emsp;</li>
+
+                    <li><a asp-area="" asp-controller="LocalStoreInCharge" asp-action="InventoryCatalogue" class="mr-sm-2" style="color:white;">Inventory Catalogue</a>&emsp;</li>
+                    <li><a asp-area="" asp-controller="LocalStoreInCharge" asp-action="Reports" class="mr-sm-2" style="color:white;">Reports</a>&emsp;</li>
+
+                }
+            </ul>
+                    <ul class="nav navbar-nav mr-right my-2">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li><p style="color:white;" class="mr-sm-4"><strong>@User.Identity.Name</strong></p></li>
+                            <li><a asp-area="" asp-controller="Login" asp-action="Signout" style="color:white;" class="mr-sm-4">Log Out&nbsp;</a></li>
+                        }
+                    </ul>
+                </div>
+    </nav>
+    
+    <br />
+    <br />
+  @*<partial name="_CookieConsentPartial" />*@
+
+  <div class="container body-content">
+    @RenderBody()
+    <hr />
+    <footer>
+      <p style="text-align:center"><b>&copy; 2018 - Retail</b></p>
+    </footer>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+  @RenderSection("Scripts", required: false)
+</body>
+</html>

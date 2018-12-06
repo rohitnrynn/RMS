@@ -1,0 +1,207 @@
+﻿
+@{
+    ViewData["Title"] = "Reports";
+}
+
+<h2>Reports</h2>
+
+
+
+
+@*<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="~/js/Filter.js"></script>*@
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+@*<style>
+    .filterable {
+        margin-top: 15px;
+    }
+
+        .filterable .panel-heading .pull-right {
+            margin-top: -20px;
+        }
+
+        .filterable .filters input[disabled] {
+            background-color: transparent;
+            border: none;
+            cursor: auto;
+            box-shadow: none;
+            padding: 0;
+            height: auto;
+        }
+
+            .filterable .filters input[disabled]::-webkit-input-placeholder {
+                color: #333;
+            }
+
+            .filterable .filters input[disabled]::-moz-placeholder {
+                color: #333;
+            }
+
+            .filterable .filters input[disabled]:-ms-input-placeholder {
+                color: #333;
+            }
+</style>*@
+<hr />
+<form aspcontroller="StoreInCharge" asp-action="GetReports">
+    <div class="form-content">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Select the date ranges </label>
+                </div>
+
+            </div>
+            <div class="col-md-3">
+
+                <div class="form-group">
+                    <input type="datetime" class="form-control" placeholder="From Date" name="date1" value="@ViewBag.Phone" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+
+                    <input type="datetime" class="form-control" name="date2" placeholder="To Date" value="" />
+                </div>
+
+            </div>
+            <div class="col-md-3">
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-dark">Search</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+
+                <div class="container" id="Pro">
+
+                    <div class="row">
+                        <div class="col card">    
+                            <div class="panel panel-dark ">
+    <div class="panel-heading panel-heading-dark">
+        <h3 class="panel-title">By Products</h3>
+
+    </div>
+    <table class="table table-hover ">
+        <thead class="thead-dark">
+            <tr class="filters">
+                <th>Name</th>
+                <th>Category</th>
+                <th>Company</th>
+                <th>Specifications</th>
+
+                <th>Quantity Sold</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pro in ViewBag.results)
+            {
+                @foreach (var item in ViewBag.products)
+                {
+                    @if (pro.Key == item.ProductId)
+                    {
+                        <tr>
+
+                            <td>@item.ProductName</td>
+                            <td>@item.ProductCat.Name</td>
+                            <td>@item.Company</td>
+
+                            @*<td>@item.product.cat.CategoryName</td>*@
+                            <td>
+                                <button type="button" class="btn bg-dark rounded-circle" data-toggle="dropdown">
+                                    <i class="fa fa-expand" style="color:white">View</i>
+                                </button>
+
+                                <div class="dropdown-menu shadow-lg mb-4 bg-white">
+                                    <table class="mx-2">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Value</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var spec in ViewBag.spec)
+
+                                            {
+                                                @if (spec.ProdId == item.ProductId)
+                                                {
+                                                    <tr>
+                                                        <td><p>@spec.SpecName</p></td>
+                                                        <td><p>@spec.SpecValue</p></td>
+                                                    </tr>}
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                            <td>@pro.Value</td>
+                        </tr>
+                    }
+                }
+
+            }
+        </tbody>
+    </table>
+    <p>Total Credit INR(₹):<b> @ViewBag.total</b></p>
+</div>
+
+                    </div>
+               
+             
+
+               
+
+                    <div class="col card" id="Cat">
+                        <div class="panel panel-dark ">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">By Category</h3>
+
+                            </div>
+                            <table class="table  table-hover ">
+                                <thead class="thead-dark">
+                                    <tr class="filters">
+                                        @*<th><input type="text" class="form-control" placeholder="Name" disabled></th>*@
+                                        <th>Category</th>
+                                        @*<th><input type="text" class="form-control" placeholder="Company" disabled></th>
+                    <th><input type="text" class="form-control" placeholder="Color" disabled></th>
+                    <th><input type="text" class="form-control" placeholder="Size" disabled></th>
+                    <th><input type="text" class="form-control" placeholder="Weight" disabled></th>*@
+                                        <th>Quantity Sold</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var pro in ViewBag.result)
+                                    {
+                                        @foreach (var item in ViewBag.category)
+                                        {
+                                            @if (pro.Key == item.Cat_Id)
+                                            {
+                                                <tr>
+
+                                                    @*<td>@item.product.ProductName</td>*@
+
+                                                    <td>@item.Name</td>
+                                                    @*<td>@item.product.comp.CompanyName</td>
+                                <td>@item.product.spec.Color</td>
+                                <td>@item.product.spec.Size</td>
+                                <td>@item.product.spec.Weight</td>*@
+                                                    <td>@pro.Value</td>
+                                                </tr>
+                                            }
+                                        }
+
+                                    }
+                                </tbody>
+                            </table>
+                            <p>Total Credit INR(₹) :<b> @ViewBag.total</b></p>
+                        </div>
+                    </div>
+             
+                </div>
+

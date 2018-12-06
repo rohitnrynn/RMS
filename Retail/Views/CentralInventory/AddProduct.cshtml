@@ -1,0 +1,82 @@
+﻿@model Retail.Models.ViewModel.CustomModelBag;
+@using Retail.Models;
+
+
+<br />
+<br />
+<h3>Add New Product</h3>
+<form method="post">
+    <div class="row">
+        <div class="col card" style="width:150px">
+            <div class="card-body">
+                <div class="form-group">
+                    <h5><b>Product Informations:</b></h5>
+                    <label>Category</label>
+                    <select class="form-control" asp-for="@Model.NewProduct.ProductCat.Name">
+                        @foreach (var cat in ViewBag.Categories)
+                        {
+                            <option>@cat.Name</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Product Company</label>
+                    <input class="form-control" asp-for="@Model.NewProduct.Company" />
+                    <span asp-validation-for="@Model.NewProduct.Company" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input class="form-control" asp-for="@Model.NewProduct.ProductName" />
+                    <span asp-validation-for="@Model.NewProduct.ProductName" class="text-danger"></span>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="col  w-150 card">
+            <div class="card-body">
+                <br /><br />
+                <div class="form-group">
+                    <label>Product Model</label>
+                    <input class="form-control" asp-for="@Model.NewProduct.Model" />
+                    <span asp-validation-for="@Model.NewProduct.Model" class="text-danger"></span>
+                </div>
+                <label>Price</label>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">₹</span>
+                    </div>
+                    <input class="form-control" type="number" min="1" asp-for="@Model.NewProduct.Rate" />
+                </div>
+                <span asp-validation-for="@Model.NewProduct.Rate" class="text-danger"></span>
+
+            </div>
+        </div>
+        <div class="col card">
+            
+                <div class="card-body">
+                    <div class="form-group">
+                        <h5><b>Specifications</b></h5>
+                        @for (int i = 0; i < Model.NewProduct.Spec.Count(); i++)
+                        {
+                            <span>Specification @(i + 1)</span>
+                            <div class="d-flex">
+                                <input type="hidden" asp-for="@Model.NewProduct.Spec[i].Id" />
+                                <input type="hidden" asp-for="@Model.NewProduct.Spec[i].ProdId" />
+                                <input class="form-control m-1" asp-for="@Model.NewProduct.Spec[i].SpecName" placeholder="Spec" />
+                                <input class="form-control m-1" asp-for="@Model.NewProduct.Spec[i].SpecValue" placeholder="Spec value" />
+                            </div>
+                            <span asp-validation-for="@Model.NewProduct.Spec[i].SpecName" class="text-danger"></span>
+                            <span asp-validation-for="@Model.NewProduct.Spec[i].SpecValue" class="text-danger"></span>
+                        }
+                        <input type="submit" value="+" asp-action="UpdateProductSpec" class="btn btn-basic btn-block" />
+                    </div>
+                    <div class="form-group">
+                        <button class="btn bg-dark btn" Style="color:white" type="submit" asp-action="AddProductSubmit">Add Product</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</form>
+

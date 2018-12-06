@@ -1,0 +1,24 @@
+@model Retail.Models.LoginView
+@{
+  ViewData["Title"] = "Login";
+}
+<h2>Login</h2>
+<div class="container-fluid">
+  <form method="post" asp-controller="Login" asp-action="SignIn">
+    <div asp-validation-summary="ModelOnly"></div>
+
+    <div>
+      <label asp-for="Username">User Name</label>
+      <input asp-for="Username" />
+      <span asp-validation-for="Username"></span>
+    </div>
+
+    <div>
+      <label asp-for="Password"></label>
+      <input asp-for="Password" />
+      <span asp-validation-for="Password"></span>
+    </div>
+    <input type="submit" value="Login" />
+  </form>
+
+</div>

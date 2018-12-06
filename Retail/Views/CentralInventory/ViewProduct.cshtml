@@ -1,0 +1,86 @@
+﻿@model Retail.Models.ViewModel.CustomModelBag;
+@using Retail.Models;
+<h2>Product Details</h2>
+<div class="table-responsive">
+    <table class="table table-hover table-bordered table-light">
+
+        <thead class="thead-dark">
+            <tr>
+                <th>Category</th>
+                <th>Company</th>
+                <th>Product Name</th>
+                <th>Product Model</th>
+                <th>Price(₹)</th>
+                <th>Specifications</th><th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                for (int i = 0; i < Model.Product.Count(); i++)
+                {
+            <tr>
+                <td>@Model.Product[i].ProductCat.Name</td>
+                <td>@Model.Product[i].Company</td>
+                <td class="w-50">
+                    <input type="hidden" asp-for="@Model.Product[i].ProductId" />
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            @Model.Product[i].ProductName
+                        </label>
+                    </div>
+                </td>
+                <td>@Model.Product[i].Model</td>
+
+                <td>@Model.Product[i].Rate</td>
+                <td class="text-center">
+
+                    <form class="">
+                        @{
+                            int Id = Model.Product[i].ProductId;
+                        }
+                        <input type="hidden" asp-for="@Id" />
+                        <button type="button" class="btn bg-dark rounded-circle" data-toggle="dropdown">
+                            <i class="fa fa-expand" style="color:white">View</i>
+                        </button>
+
+                        <div class="dropdown-menu shadow-lg mb-4 bg-white">
+                            <table class="mx-2">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var spec in Model.Product[i].Spec)
+                                    {
+                                        <tr>
+                                            <td><p>@spec.SpecName</p></td>
+                                            <td><p>@spec.SpecValue</p></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <button class="btn btn-dark rounded-circle" asp-action="EditProduct" type="submit" formmethod="get"><i class="fa fa-edit">Manage</i></button>
+
+
+                    </form>
+
+                </td>
+                <td>
+                    <form class="">
+                    </form>
+                        </td>
+            </tr>
+                }
+            }
+
+        </tbody>
+
+    </table>
+</div>
+<form asp-action="AddProduct" method="get">
+    <input type="submit" value="Add product" style="color:white" class="btn btn-dark  m-2 mb-5">
+</form>
+

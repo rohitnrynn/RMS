@@ -1,0 +1,154 @@
+﻿@model Retail.Models.ViewModel.CustomModelBag
+@{
+    ViewData["Title"] = "Index";
+}
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<div class="card mt-1">
+    <div class="card-body">
+        <h2 class="card-title" style="text-align:center;"><strong>Billing</strong> </h2>
+        <form>
+            <div class="form-inline float-right">
+                <button type="submit" class="btn btn-lg btn-dark mr-sm-2 ml-lg-2" asp-action="CustomerDetails" formmethod="post">Print Bill</button>
+            </div>
+        </form><br /><br />
+
+        <div class="">
+            <form>
+                <div class="form-inline">
+                    <label asp-for="BillDetails.ProductId" class="control-label mr-lg-2"><strong>Product Id</strong></label>
+                    <select asp-for="BillDetails.ProductId" class="form-control" asp-items="ViewBag.ProductId" style="width:150px"></select>
+                    <label asp-for="BillDetails.Quantity" class="control-label ml-lg-2"><strong>Quantity</strong> &nbsp;&nbsp;</label>
+                    <input asp-for="BillDetails.Quantity" min="1" class="form-control" style="width:150px" placeholder="Quantity">
+                    <button type="submit" class="btn btn-sm btn-outline-dark mr-sm-2 ml-lg-2" asp-action="AddToBill" formmethod="post">Add To Bill</button>
+
+                </div>
+            </form>
+            <br /><br />
+            <h5 class="text-center"><strong>Bill Details</strong></h5>
+            <br />
+            <div class="row clearfix">
+                <div class="col-md-12">
+                    <table class="table table-bordered table-hover" id="tab_logic">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th class="text-center"> Product </th>
+                                <th class="text-center"> Quantity </th>
+                                <th class="text-center"> Unit Price(₹) </th>
+                                <th class="text-center"> Amount(₹) </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var bill in ViewBag.BillDetails)
+                            {
+                                @foreach (var prod in ViewBag.Products)
+                                {
+                                    if (bill.ProductId == prod.ProductId)
+                                    {
+                                        <tr id='addr0'>
+                                            <td><input type="text" name='product[]' placeholder='Product Name' class="form-control" readonly value="@(prod.ProductName ?? String.Empty)" /></td>
+                                            <td><input type="number" name='qty[]' placeholder='Quantity' class="form-control qty" step="0" min="0" readonly value="@(bill.Quantity ?? String.Empty)" /></td>
+                                            <td><input type="number" name='price[]' placeholder='Unit Price' class="form-control price" step="0.00" min="0" readonly value="@(prod.Rate ?? String.Empty)" /></td>
+                                            <td><input type="number" name='total[]' placeholder='0.00' class="form-control total" readonly value="@(bill.Amount ?? String.Empty)" /></td>
+                                        </tr>
+                                    }
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row clearfix  pull-left" style="margin-top:20px;">
+                <div class="pull-right mr-lg-2">
+                    <table class="table table-bordered table-hover" id="tab_logic_total">
+                        <tbody>
+                            <tr ">
+                                <th class="text-center">Sub Total</th>
+                                <td class="text-center"><input type="number" name='sub_total' placeholder='0.00' class="form-control" id="sub_total" readonly /></td>
+                            </tr>
+                            <tr>
+                                <th class="text-center">Discount</th>
+                                <td class="text-center">
+                                    <div class="input-group mb-2 mb-sm-0">
+                                        <input type="number" class="form-control" id="tax" name="tax" placeholder="0">
+                                        <div class="input-group-addon">%</div>
+                                    </div>
+                                </td>
+                                <th class="text-center">Discount Amount</th>
+                                <td class="text-center"><input type="number" asp-for="Bill.TotalDiscount" name='tax_amount' id="tax_amount" placeholder='0.00' class="form-control" readonly /></td>
+
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <th class="text-center">GST</th>
+                                <td class="text-center">
+                                    <div class="input-group mb-2 mb-sm-0">
+                                        <input type="number" class="form-control" id="gst" name="gst" placeholder="0" readonly value="5">
+                                        <div class="input-group-addon">%</div>
+                                    </div>
+                                </td>
+                                <th class="text-center">GST Amount</th>
+                                <td class="text-center"><input type="number" name='gst_amount' id="gst_amount" placeholder='0.00' class="form-control" readonly /></td>
+
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <th class="text-right">Grand Total(₹)</th>
+                                <td class="text-right" style="background-color:black;"><input type="number" asp-for="Bill.TotalPayable" name='total_amount' id="total_amount" placeholder='0.00' class="form-control" readonly /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        //$('#tab_logic tbody').on('keyup change', function () {
+        calc();
+        //});
+        $('#tax').on('keyup change', function () {
+            calc_total();
+        });
+        $('#gst').on('keyup change', function () {
+            calc_total();
+        });
+    });
+
+    function calc() {
+        $('#tab_logic tbody tr').each(function (i, element) {
+            var html = $(this).html();
+            if (html != '') {
+                var qty = $(this).find('.qty').val();
+                var price = $(this).find('.price').val();
+                $(this).find('.total').val(qty * price);
+
+                calc_total();
+            }
+        });
+    }
+
+    function calc_total() {
+        total = 0;
+        $('.total').each(function () {
+            total += parseInt($(this).val());
+        });
+        $('#sub_total').val(total.toFixed(2));
+        gst_sum = total / 100 * $('#gst').val();
+        totalamount = total + gst_sum;
+        tax_sum = totalamount / 100 * $('#tax').val();
+        $('#gst_amount').val(gst_sum.toFixed(2));
+        $('#tax_amount').val(tax_sum.toFixed(2));
+        $('#total_amount').val((totalamount - tax_sum).toFixed(2));
+    }
+</script>
